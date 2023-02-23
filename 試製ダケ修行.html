@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<link rel = "stylesheet" href = "試製ダケスタイル.css">
+<head>
+<meta charset="utf-8">
+<title>試製ダケ修行</title>
+<h1>
+ダケ井ダケ子のヨセ教室（仮）
+</h1>
+<script>
+var qa=new Array(12);
+qa[0]=2;
+qa[1]=6;
+qa[2]=2;
+qa[3]=4;
+qa[4]=6;
+qa[5]=1;
+qa[6]=1;
+qa[7]=5;
+qa[8]=1;
+qa[9]=2;
+qa[10]=3;
+qa[11]=4;
+var max = qa.length;
+var num = Math.floor(max*Math.random());
+document.write('<img src="ヨセ'+num+'.png" />');
+var ans = qa[num];
+function checkyose(){
+var mokusu = document.getElementById("inyose").value;
+
+var outyoseElement = document.getElementById("outyose");
+if(mokusu == ans){
+outyoseElement.innerHTML = "正解！";
+}
+else{
+outyoseElement.innerHTML = "不正解　正解は" + ans +"目";
+}
+}
+function abc(){
+checkyose();
+return false;
+}
+</script>
+<body>
+
+<p>
+これ、何目？<br>
+<form onsubmit="return abc()">
+<input type="number" id="inyose">
+<br>
+<input type="button" id="keisan" 
+value="提出" onClick="checkyose()">
+</form> 
+</p>
+
+<div id="outyose" >
+</div>
+
+<script>
+document.getElementById('inyose').focus();
+</script>
+<h2 id="waku">
+<a href="試製ダケ修行.html" accesskey="u">次へ</a>
+</h2>
+<h2 id="waku">
+<a href="index.html">ホーム</a>
+</h2>
+</body>
+</html>
