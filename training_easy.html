@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<link rel = "stylesheet" href = "試製ダケスタイル.css">
+<head>
+<meta charset="utf-8">
+<title>修行(かんたん)</title>
+<h1>
+修行(かんたん)
+</h1>
+<script>
+var qaeasy=new Array(15);/*ガチで変え忘れ注意、いや割とガチで*/
+qaeasy[0]=2;
+qaeasy[1]=6;
+qaeasy[2]=2;
+qaeasy[3]=4;
+qaeasy[4]=6;
+qaeasy[5]=1;
+qaeasy[6]=1;
+qaeasy[7]=5;
+qaeasy[8]=1;
+qaeasy[9]=2;
+qaeasy[10]=3;
+qaeasy[11]=4;
+qaeasy[12]=1;
+qaeasy[13]=6;
+qaeasy[14]=6;
+var max = qaeasy.length;
+var num = Math.floor(max*Math.random());
+document.write('<img src="easy'+num+'.png" />');
+var ans = qaeasy[num];
+function checkyose(){
+var mokusu = document.getElementById("inyose").value;
+
+var outyoseElement = document.getElementById("outyose");
+if(mokusu == ans){
+outyoseElement.innerHTML = "正解！";
+}
+else{
+outyoseElement.innerHTML = "不正解　正解は" + ans +"目";
+}
+}
+function abc(){
+checkyose();
+return false;
+}
+</script>
+<body>
+
+<p>
+これ、何目？<br>
+<form onsubmit="return abc()">
+<input type="number" id="inyose" step="0.01">
+<br>
+<input type="button" id="keisan" 
+value="提出" onClick="checkyose()">
+</form> 
+</p>
+
+<div id="outyose" >
+</div>
+
+<script>
+document.getElementById('inyose').focus();
+</script>
+<h2 id="waku_easy">
+<a href="training_easy.html" accesskey="u">次へ</a>
+</h2>
+<h2 id="waku_easy">
+<a href="index.html">ホーム</a>
+</h2>
+</body>
+</html>

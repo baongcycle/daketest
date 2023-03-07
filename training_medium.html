@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<link rel = "stylesheet" href = "試製ダケスタイル.css">
+<head>
+<meta charset="utf-8">
+<title>修行(ふつう)</title>
+<h1>
+修行(ふつう)
+</h1>
+<script>
+var qamed=new Array(13);/*ここ変え忘れ注意*/
+qamed[0]=4;
+qamed[1]=14;
+qamed[2]=10;
+qamed[3]=10;
+qamed[4]=2;
+qamed[5]=1.5;
+qamed[6]=1.75;
+qamed[7]=1.5;
+qamed[8]=6;
+qamed[9]=10;
+qamed[10]=3;
+qamed[11]=8;
+qamed[12]=16;
+var max = qamed.length;
+var num = Math.floor(max*Math.random());
+document.write('<img src="med'+num+'.png" />');
+var ans = qamed[num];
+function checkyose(){
+var mokusu = document.getElementById("inyose").value;
+
+var outyoseElement = document.getElementById("outyose");
+if(mokusu == ans){
+outyoseElement.innerHTML = "正解！";
+}
+else{
+outyoseElement.innerHTML = "不正解　正解は" + ans +"目";
+}
+}
+function abc(){
+checkyose();
+return false;
+}
+</script>
+<body>
+
+<p>
+これ、何目？<br>
+<form onsubmit="return abc()">
+<input type="number" id="inyose" step="0.01">
+<br>
+<input type="button" id="keisan" 
+value="提出" onClick="checkyose()">
+</form> 
+</p>
+
+<div id="outyose" >
+</div>
+
+<script>
+document.getElementById('inyose').focus();
+</script>
+<h2 id="waku_medium">
+<a href="training_medium.html" accesskey="u">次へ</a>
+</h2>
+<h2 id="waku_medium">
+<a href="index.html">ホーム</a>
+</h2>
+</body>
+</html>

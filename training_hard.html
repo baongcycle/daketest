@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<link rel = "stylesheet" href = "試製ダケスタイル.css">
+<head>
+<meta charset="utf-8">
+<title>修行(むずかしい)</title>
+<h1>
+修行(むずかしい)
+</h1>
+<script>
+var qahard=new Array(7);/*ここ変え忘れ注意*/
+qahard[0]=12.67;
+qahard[1]=14;
+qahard[2]=19;
+qahard[3]=6.88;
+qahard[4]=28;
+qahard[5]=10;
+qahard[6]=5.33;
+var max = qahard.length;
+var num = Math.floor(max*Math.random());
+document.write('<img src="hard'+num+'.png" />');
+var ans = qahard[num];
+function checkyose(){
+var mokusu = document.getElementById("inyose").value;
+
+var outyoseElement = document.getElementById("outyose");
+if(mokusu == ans){
+outyoseElement.innerHTML = "正解！";
+}
+else{
+outyoseElement.innerHTML = "不正解　正解は" + ans +"目";
+}
+}
+function abc(){
+checkyose();
+return false;
+}
+</script>
+<body>
+
+<p>
+これ、何目？<br>
+<form onsubmit="return abc()">
+<input type="number" id="inyose" step="0.01">
+<br>
+<input type="button" id="keisan" 
+value="提出" onClick="checkyose()">
+</form> 
+</p>
+
+<div id="outyose" >
+</div>
+
+<script>
+document.getElementById('inyose').focus();
+</script>
+<h2 id="waku_hard">
+<a href="training_hard.html" accesskey="u">次へ</a>
+</h2>
+<h2 id="waku_hard">
+<a href="index.html">ホーム</a>
+</h2>
+</body>
+</html>
